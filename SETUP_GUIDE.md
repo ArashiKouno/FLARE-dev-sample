@@ -102,11 +102,12 @@ MySQL connected!
 1. Backendの軌道に使ったターミナルを残したまま、新しいターミナルを開く（ターミナル>ターミナルの分割）
 
 2. memo-app直下に、frontend ディレクトリを作成して移動：
+ディレクトリ作成はGUIでOK⇒
 ```bash
-cd cd sample-codes\memo-app\backend
+cd sample-codes\memo-app\backend
 ```
 
-1. Viteプロジェクトを作成（Vue + JavaScript を選択）：
+1. Viteプロジェクトを作成：
 
 ```bash
 npm create vite@latest . -- --template vue
@@ -129,7 +130,7 @@ npm install
 npm install axios
 ```
 
-6. `src/App.vue` をメモ帳アプリ用に書き換える（../into-frontend/App.vueの中身をコピペ）
+6. `src/App.vue` を書き換える（../into-frontend/App.vueの中身をコピペ）
 
 7. 開発サーバーを起動：
 
