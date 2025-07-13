@@ -7,9 +7,9 @@
 ## ✅ 前提環境
 
 - OS：Windows
-- ターミナル：PowerShell または VSCode 統合ターミナル
-- Node.js と MySQL のインストールが可能な権限（ホワイトリスト確認済み）
-- FLARE-dev-samplesフォルダはCドライブ直下等、ローカルに配置すること（ダウンロードやデスクトップ等、パスにOneDriveが入っている場所はNG）
+- ターミナル：VSCode 統合ターミナル
+- Node.js と MySQL のインストールが可能な権限（ホワイトリスト確認済みの為障壁ナシ）
+- FLARE-dev-samplesフォルダはCドライブ直下等、ローカルに配置すること（ダウンロードやデスクトップ等、パスにOneDriveが入っている場所はNG　※Win11の場合）
 - VSCode及び、下記拡張機能のインストール（ホワイトリスト確認済み）
    - Japanese Language Pack for Visual Studio Code
    - Markdown Preview Enhanced（これを入れたら、本ファイルもプレビュー表示すると見やすい）
