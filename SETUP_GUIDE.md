@@ -1,0 +1,156 @@
+# セットアップガイド（環境構築の完全手順）
+
+このドキュメントでは、MySQLとNode.jsのインストールから始まり、メモ帳アプリが動作するまでの手順をすべてまとめています。
+
+---
+
+## ✅ 前提環境
+
+- OS：Windows
+- ターミナル：PowerShell または VSCode 統合ターミナル
+- Node.js と MySQL のインストールが可能な権限（ホワイトリスト確認済み）
+- FLARE-dev-samplesフォルダはCドライブ直下等、ローカルに配置すること（ダウンロードやデスクトップ等、パスにOneDriveが入っている場所はNG）
+- VSCode及び、下記拡張機能のインストール（ホワイトリスト確認済み）
+   - Japanese Language Pack for Visual Studio Code
+   - Markdown Preview Enhanced（これを入れたら、本ファイルもプレビュー表示すると見やすい）
+     - 該当のファイル上でctrl+K⇒V
+---
+
+## 🐬 MySQLのインストールと設定
+
+1. MySQL公式サイトから MySQL Installer をダウンロード  
+   https://dev.mysql.com/downloads/installer/
+2. セットアップ中に「全部乗せ」的な選択肢を選択
+3. `root` ユーザーのパスワードを設定したら控える（後で使用）
+4. インストール完了後、MySQL Workbench や mysql コマンドが使用可能に
+
+---
+
+## 🛠 データベースとテーブル作成
+
+1. ターミナルまたは MySQL Workbench を使って以下を実行：
+```sql
+CREATE DATABASE IF NOT EXISTS memo_db DEFAULT CHARACTER SET utf8mb4;
+USE memo_db;
+
+CREATE TABLE IF NOT EXISTS memos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  content TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+---
+
+## 📝 Node.jsのインストール
+1. https://nodejs.org から最新版（LTS推奨）をインストール
+2. ターミナルでバージョン確認：
+```bash
+node -v
+npm -v
+```
+※インストール後に、PC再起動が必要な可能性あり
+
+---
+
+## 🖥 VSCodeのセットアップ及び、サンプルを開く
+
+1. `VSCode` のショートカットを右クリック → プロパティ → 「詳細設定」から「管理者として実行」をチェック
+2. ローカルに配置したFLARE-dev-samplesを右クリックし、`Codeで開く`を選択
+3. 次からの手順の為、ターミナル>新しいターミナルで、ターミナルを起動しておく
+
+---
+
+## 🚀 バックエンドのセットアップ（Node.js + Express）
+
+1. ターミナルで、`backend/` ディレクトリに移動：
+
+```bash
+cd sample-codes\memo-app\backend
+```
+
+2. PowerShellの実行ポリシーを緩める（※毎回ターミナル起動時に必要）：
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+3. 必要なパッケージをインストール：
+
+```bash
+npm install
+npm install express mysql2 cors
+```
+
+1. `db.js` の `password: '-'` の`-（ハイフン）`を MySQL root のパスワードに書き換える
+
+2. バックエンドサーバーを起動：
+
+```bash
+node index.js
+```
+下記のように表示されたらバックエンドサーバー起動完了
+```bach
+MySQL connected!
+```
+**！このターミナルは閉じない事！**
+
+---
+
+## 🌐 フロントエンドのセットアップ（Vite + Vue）
+
+1. Backendの軌道に使ったターミナルを残したまま、新しいターミナルを開く（ターミナル>ターミナルの分割）
+
+2. memo-app直下に、frontend ディレクトリを作成して移動：
+```bash
+cd cd sample-codes\memo-app\backend
+```
+
+1. Viteプロジェクトを作成（Vue + JavaScript を選択）：
+
+```bash
+npm create vite@latest . -- --template vue
+```
+
+選択肢：
+- Framework: `Vue`
+- Variant: `JavaScript`
+
+4. 実行ポリシーを一時解除（再掲）：
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+5. パッケージをインストール：
+
+```bash
+npm install
+npm install axios
+```
+
+6. `src/App.vue` をメモ帳アプリ用に書き換える（../into-frontend/App.vueの中身をコピペ）
+
+7. 開発サーバーを起動：
+
+```bash
+npm run dev
+```
+
+8. ブラウザで `http://localhost:5173` を開く
+
+---
+
+## ✅ 動作確認
+
+- メモを追加 → 表示されるか
+- メモを削除 → 即座に反映されるか
+- バックエンドターミナルにエラーがないか確認
+
+---
+
+## 📌 補足
+- セキュリティの観点から、そのターミナルを閉じるたびに緩めた実行ポリシーがもとに戻るコマンドを利用しています。
+  - よって、毎回 PowerShell を開いたら `Set-ExecutionPolicy` を再実行する必要があります
+- 開発を終了するときは、BackendサーバーとFrontendサーバーを両方停止しておきましょう。
+  - それぞれのターミナルで、ctrl+Cで停止できます。
