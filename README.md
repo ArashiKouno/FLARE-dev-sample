@@ -11,3 +11,5 @@
 - Node.js / Express
 - MySQL
 - Vue.js / Vite
+
+## ページ右上の`<>Code`ボタンから、`Download Zip`を選択してダウンロードし、ローカルに配置してください。
