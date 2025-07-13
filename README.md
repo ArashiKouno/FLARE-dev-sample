@@ -11,9 +11,3 @@
 - Node.js / Express
 - MySQL
 - Vue.js / Vite
-
-## 起動方法
-1. MySQLでデータベースとテーブルを作成
-2. `backend` ディレクトリで `npm install`
-3. `frontend` ディレクトリで `npm install`
-4. サーバーを起動（`node index.js`と`npm run dev`）
