@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS memos (
 ---
 
 ## 📝 Node.jsのインストール
-1. https://nodejs.org から最新版（LTS推奨）をインストール
+1. https://nodejs.org から最新版をインストール
 2. ターミナルでバージョン確認：
 ```bash
 node -v
