@@ -2,7 +2,7 @@
   <div id="app">
     <!-- アプリのタイトル -->
     <h1>メモ帳アプリ</h1>
-
+    <p>たくさんいじって改良してね</p>
     <!-- メモ入力フォーム -->
     <!-- @submit.prevent: フォーム送信時のリロードを防ぎ、addMemo 関数を実行 -->
     <form @submit.prevent="addMemo">
