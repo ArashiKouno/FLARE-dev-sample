@@ -104,7 +104,7 @@ MySQL connected!
 2. memo-app直下に、frontend ディレクトリを作成して移動：
 ディレクトリ作成はGUIでOK⇒
 ```bash
-cd sample-codes\memo-app\backend
+cd sample-codes\memo-app\frontend
 ```
 
 1. Viteプロジェクトを作成：
