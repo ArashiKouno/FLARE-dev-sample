@@ -84,7 +84,7 @@ npm install express mysql2 cors
 
 1. `db.js` の `password: '-'` の`-（ハイフン）`を MySQL root のパスワードに書き換える
 
-2. バックエンドサーバーを起動：
+2. バックエンドサーバーを起動（毎回起動時に実行）：
 
 ```bash
 node index.js
@@ -117,7 +117,7 @@ npm create vite@latest . -- --template vue
 - Framework: `Vue`
 - Variant: `JavaScript`
 
-4. 実行ポリシーを一時解除（再掲）：
+4. 実行ポリシーを一時解除（再掲）（毎回起動時に実行）：
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
@@ -132,7 +132,7 @@ npm install axios
 
 6. `src/App.vue` を書き換える（../into-frontend/App.vueの中身をコピペ）
 
-7. 開発サーバーを起動：
+7. 開発サーバーを起動（毎回起動時に実行）：
 
 ```bash
 npm run dev
