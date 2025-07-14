@@ -3,14 +3,14 @@
 このアプリは、Node.js（Express）+ MySQL + Vue.js（Vite）を使用した簡単なメモ帳アプリです。
 
 ## 主な機能
-- メモの追加
 - メモの一覧表示
+- メモの追加
 - メモの削除
 
 ## 使用技術
-- Node.js / Express
-- MySQL
-- Vue.js / Vite
+- FE：Vue.js / Vite
+- BE：Node.js / Express
+- DB：MySQL
 
 ## 準備
 
