@@ -77,8 +77,8 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 3. 必要なパッケージをインストール：
 
 ```bash
-npm install
 npm install express mysql2 cors
+npm install
 ```
 
 1. `db.js` の `password: '-'` の`-（ハイフン）`を MySQL root のパスワードに書き換える
