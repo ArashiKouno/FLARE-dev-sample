@@ -100,8 +100,7 @@ MySQL connected!
 
 1. Backendの起動に使ったターミナルを残したまま、新しいターミナルを開く（ターミナル>ターミナルの分割）
 
-2. memo-app直下に、frontend ディレクトリを作成して移動：
-ディレクトリ作成はGUIでOK⇒
+2. 新しいターミナルで、`frontend/`ディレクトリに移動
 ```bash
 cd sample-codes\memo-app\frontend
 ```
