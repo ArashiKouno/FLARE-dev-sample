@@ -17,11 +17,12 @@
 
 ## 🐬 MySQLのインストールと設定
 
-1. MySQL公式サイトから MySQL Installer をダウンロード  
+1. MySQL公式サイトから MySQL Installer をダウンロード
    https://dev.mysql.com/downloads/installer/
-2. セットアップ中に「全部乗せ」的な選択肢を選択
-3. `root` ユーザーのパスワードを設定したら控える（後で使用）
-4. インストール完了後、MySQL Workbench や mysql コマンドが使用可能に
+   （ファイルサイズが大きい方）
+3. セットアップ中に「全部乗せ」的な選択肢を選択
+4. `root` ユーザーのパスワードを設定したら控える（後で使用）
+5. インストール完了後、MySQL Workbench や mysql コマンドが使用可能に
 
 ---
 
